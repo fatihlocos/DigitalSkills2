@@ -1,0 +1,42 @@
+.selected {color: #006AB3 !important;}
+.shadow {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+    }
+    </style>
+    <![endif]--> 
+    <!--[if lt IE 8]>
+    <style type="text/css">
+    h2, h3 {margin: 20px 0px 0px 0px;}
+    .shadow {
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+    }
+    </style>
+    <![endif]--> 
+    <!--[if IE 6]>
+    <script type="text/javascript" src="/js/DD_belatedPNG_0.0.8a-min.js"></script>
+    <script type="text/javascript">
+      DD_belatedPNG.fix('.png');
+    </script>
+    <style type="text/css">
+    .page-container {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    margin-left: -500px;
+    margin-top: 0;
+    }
+    .menu {
+    height: 340px;
+    }
+    .main {
+    position: absolute;
+    width: 728px;
+    left: 242px;
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    }
+    .footer {
+    bottom: 26px;
+    }
+    </style>
