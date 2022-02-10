@@ -1,11 +1,9 @@
-// data types
+// data types 
 
 // number (5)
 var n1=4,n2=6;
 var n3=5.5,n4=2040.50;
 console.log(n1,n2,n3,n4)
-
-
 
 // string ("a string data")
 var companyname = "intecbrussel"
@@ -14,25 +12,20 @@ var company = "intec"
 company = company + "brussel" // merged string
 console.log(company)
 
-
 // boolean (true/false)
 var isStudent = false;
 var isAdmin = true;
 console.log(isStudent,isAdmin)
 
-
 // undefined
 console.log(undefined)
 
-//null
+// null 
 console.log(null)
 console.log((50*50)*null)
 
-
-// boolean (true/false)
-
 // object ([],{})
-    //array
+    // array
 
     var numbers = [1,2,3,4]
     var myArr = [23,"hello",true,undefined,null,[5,6,7]]
@@ -47,7 +40,7 @@ console.log((50*50)*null)
     console.log(myComplexArray[0][1])
     console.log(myComplexArray[1][0])
 
-    //object
+    // object
     var student = {
         fullname:"Joe Dalton",
         email:"joe@microsoft.com",
@@ -61,8 +54,6 @@ console.log((50*50)*null)
     console.log(student.fullname)
     console.log(student['email'])
 
-
-
+    
 // function
-
 

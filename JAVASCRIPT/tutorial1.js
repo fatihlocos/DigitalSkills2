@@ -1,3 +1,4 @@
+
 // console.log()
 // console.log('hello world1x')
 // console.info('hrllo')
@@ -33,5 +34,3 @@ var publicTransport  = 120
 var expensesPerMonth =  RentOfApt + FoodMonthly + publicTransport
 var myBudget = incomePerMonth - expensesPerMonth
 console.log(myBudget)
-
-
