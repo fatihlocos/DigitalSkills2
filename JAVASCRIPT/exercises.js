@@ -1,23 +1,24 @@
-let user = []
+// let users = []
 
-function addUser(user) {
-    users.push(user)
+// function addUser(x) {
+//     users.push(x)
+// }
 
+// addUser('mike')
+// addUser('joe')
+// addUser('smith')
+
+// console.log(users)
+
+let student = {
+    name:"joe",
+    scores:[55,66,77,88,99,55,77,44,76]
 }
 
-// push method
-addUser('mike')
-addUser('joe')
-addUser('smith')
-let movie = {
-    title:"Joker"
+let result = student.scores.reduce(function(t,c){
+    console.log(c)
+   return t += c
+    
+})
 
-}
-MovieTitles.push(movie)
-
-
-let films = ['a','b','c','d','e']
-
-// join
-
-result = films.join
+console.log(result)
