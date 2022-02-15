@@ -1,1 +1,1 @@
-## **Javascript core**
+## Javascript core
