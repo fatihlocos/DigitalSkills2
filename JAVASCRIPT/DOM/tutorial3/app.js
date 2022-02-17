@@ -5,5 +5,3 @@ var datepicker = new tui.DatePicker('#wrapper', {
         format: 'yyyy-MM-dd'
     }
 });
-
-const cardBody = document.query
