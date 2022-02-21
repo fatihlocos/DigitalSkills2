@@ -21,7 +21,3 @@ addButton.addEventListener('click',function(e){
 //     e.preventDefault();
 //     console.log('hlelo')
 // })
-
-const inputEl = document.querySelector("#todo")
-
-console.log(inputEl.value)

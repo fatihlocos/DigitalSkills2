@@ -39,6 +39,7 @@ console.log(result)
 // // 1-45 randomMethod
 // var lotto = [x,y,t,a,q,r];
 
+/*
 
 // Option 1
 var lotto = [];
@@ -63,6 +64,8 @@ var lotto = Array(45).fill().map((_, index) => index + 1);
 lotto.sort(() => Math.random() - 0.5);
 
 console.log(lotto.slice(0, 6));
+
+*/
 
 
 
