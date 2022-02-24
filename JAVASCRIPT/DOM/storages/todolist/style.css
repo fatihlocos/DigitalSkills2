@@ -5,7 +5,7 @@ body,html{
 }
 
 body{
-    background-color: red !important;
+    background-color: black !important;
 }
 .tui-datepicker-input {
     position: relative;
@@ -17,16 +17,16 @@ body{
 }
 
 .list-group-item{
-    color: green;
+    color: black;
 }
 .list-group-item:nth-child(odd){
-    background-color: yellow (51, 51, 51) !important;
+    background-color: rgb(51, 51, 51) !important;
     color: rgb(160, 158, 158);
 }
 
 input{
     background-color: rgb(37, 37, 37) !important;
-    color:yellow !important;
+    color:white !important;
 }
 input::placeholder{
     color:rgb(167, 165, 165) !important;

@@ -35,36 +35,57 @@ setItem(), getItem(), removeItem(), clear(), key()
 // :
 // {message:'no record'};
 
-const [username,password] = document.querySelectorAll('input')
-const addData  =document.querySelector('a')
-const WelcomeUser  = document.querySelector('.welcome')
-addData.addEventListener('click',(e)=>{
-    e.preventDefault();
-    
-    const userData = {
-        username:username.value,
-        password:password.value
-    }
+const [username, password] = document.querySelectorAll('input')
+const addData = document.querySelector('a')
+const WelcomeUser = document.querySelector('.welcome')
 
-    localStorage.setItem('userdata',JSON.stringify(userData))
-    var storageData = JSON.parse(localStorage.getItem('userdata'))
-    storageData != null ?
-    WelcomeUser.innerHTML=`Welcome ${storageData.username} !!!!`
+function isEmpty(str) {
+  return (!str || str.length === 0 );
+}
+
+
+addData.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  if(isEmpty(localStorage.getItem('userdata'))){
+    localStorage.setItem('userdata','[]')
+  }
+
+  let tempData = JSON.parse(localStorage.getItem('userdata'));
+  let temp;
+  if (tempData.constructor.name != 'Object') {
+
+    temp = [...JSON.parse(localStorage.getItem('userdata'))];
+
+  } else {
+    temp = [JSON.parse(localStorage.getItem('userdata'))];
+  }
+
+
+  const userData = {
+    username: username.value,
+    password: password.value
+  }
+
+  temp.push(userData)
+
+  localStorage.setItem('userdata', JSON.stringify(temp))
+  var storageData = JSON.parse(localStorage.getItem('userdata'))
+  storageData != null ?
+    WelcomeUser.innerHTML = `Welcome ${storageData.username} !!!!`
     :
-    WelcomeUser.innerHTML=`No Message`
+    WelcomeUser.innerHTML = `No Message`
   //  console.log(userData)
 })
-/*
-$window.localStorage.setItem('initData', JSON.stringify($scope.initData));
-$scope.retrievedData = JSON.parse($window.localStorage.getItem('initData'));
-$scope.sortedType = 'firstName';
-$scope.sortedReverse = false;
-//Remove Rows and Update localStorage Key Values
-userData.removeRow = function(row) {
-    userdata.retrievedData.splice(storageData, 1);
-    userdata.splice(storageData, 1);
-    $window.localStorage.setItem('initData', JSON.stringify($scope.initData));
-}
-});
 
-*/
+
+
+
+document.addEventListener('DOMContentLoaded',()=>{
+  let userData = JSON.parse(localStorage.getItem('userdata'))
+
+  userData.forEach(user=>{
+    console.log(user)
+    WelcomeUser.innerHTML += `Username: ${user.username}\n`
+  })
+})
