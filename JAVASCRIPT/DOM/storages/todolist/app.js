@@ -52,17 +52,7 @@ i.addEventListener('click',(e)=>{
     }
 })
 
-listGroup.addEventListener('click',(e)=>{
 
-    if(e.target.className === 'fa fa-remove'){
-        console.log('hello list group')
-        console.log(e.target.className)
-        console.log(e.target)
-        console.log(e.target.parentElement)
-        console.log(e.target.parentElement.parentElement)
-        e.target.parentElement.parentElement.remove();
-    }
-})
 
 TodoFilter.addEventListener('keyup',(event)=>{
     const filterVal = TodoFilter.value.toLowerCase();
@@ -78,3 +68,88 @@ TodoFilter.addEventListener('keyup',(event)=>{
     })
     
 })
+//================================================
+//const [username, password] = document.querySelectorAll('input')
+//const addData = document.querySelector('a')
+//const WelcomeUser = document.querySelector('.welcome')
+
+function isEmpty(str) {
+  return (!str || str.length === 0 );
+}
+
+z.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  if(isEmpty(localStorage.getItem('userdata'))){
+    localStorage.setItem('userdata','[]')
+  }
+
+  let tempData = JSON.parse(localStorage.getItem('userdata'));
+  let temp;
+  if (tempData.constructor.name != 'Object') {
+
+    temp = [...JSON.parse(localStorage.getItem('userdata'))];
+
+  } else {
+    temp = [JSON.parse(localStorage.getItem('userdata'))];
+  }
+
+
+  const userData = {
+    todoInput: todoInput.value,
+    DateOfTodo: DateOfTodo.value
+  }
+
+  temp.push(userData)
+
+  localStorage.setItem('userdata', JSON.stringify(temp))
+  var storageData = JSON.parse(localStorage.getItem('userdata'))
+  storageData != null ?
+  todoInput.innerHTML = `${storageData.todoInput}` && `${storageData.DateOfTodo}`
+    :
+    todoInput.innerHTML = `No Message`
+  //  console.log(userData)
+})
+
+listGroup.addEventListener('click',(e)=>{
+
+    if(e.target.className === 'fa fa-remove'){
+        console.log('hello list group')
+        console.log(e.target.className)
+        console.log(e.target)
+        console.log(e.target.parentElement)
+        console.log(e.target.parentElement.parentElement)
+        e.target.parentElement.parentElement.remove();
+        let userData = JSON.parse(localStorage.getItem('userdata'))
+        userData.forEach(user => {
+            user.todoInput.remove()
+            user.DateOfTodo.remove()
+        })
+        //localStorage.removeItem(e.target)
+        //userData.remove()
+    }
+})
+
+
+document.addEventListener('DOMContentLoaded',()=>{
+    let userData = JSON.parse(localStorage.getItem('userdata'))
+  
+    userData.forEach(user=>{
+      console.log(user)
+      const TodoModel = `
+    <li class="list-group-item d-flex justify-content-between">
+    <p class="todotitle">${user.todoInput}</p>
+    <p class="tododate">${user.DateOfTodo}</p>
+         <a href="#" class="delete-item">
+         <i class="fa fa-remove"></i>
+          </a>
+</li>
+    `
+    const ModelRendered = document.createRange().createContextualFragment(TodoModel)
+
+    console.log(ModelRendered)
+    listGroup.append(ModelRendered)
+    //   todoInput.innerHTML += `Todo: ${user.todoInput}\n`
+    //   DateOfTodo.innerHTML += `Date: ${user.DateOfTodo}\n`
+    })
+  })

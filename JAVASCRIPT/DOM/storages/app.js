@@ -78,14 +78,3 @@ addData.addEventListener('click', (e) => {
   //  console.log(userData)
 })
 
-
-
-
-document.addEventListener('DOMContentLoaded',()=>{
-  let userData = JSON.parse(localStorage.getItem('userdata'))
-
-  userData.forEach(user=>{
-    console.log(user)
-    WelcomeUser.innerHTML += `Username: ${user.username}\n`
-  })
-})
